@@ -28,6 +28,8 @@ For facerec.py
    
 Hope everyone has luck with this!
 
+First run generate.py after editing the file to match your file structure and needs. This will create as many training files as you want. Try playing around with different haarCascades. Just change the count var to wherever you last left off the training. The more images the better.
+
 To run the script in your command line run python facerec.py </path/to/images/>
 
 P.S. In the images folder, should be the subfolders per individual's training images.
