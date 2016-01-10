@@ -6,7 +6,8 @@ import picamera
 import picamera.array 
 import cv2
 import numpy as np
-
+import face
+import config
 import csv
 
 
@@ -21,6 +22,8 @@ HAAR_FACES         = 'haarcascade_frontalface_alt.xml'
 HAAR_SCALE_FACTOR  = 1.3
 HAAR_MIN_NEIGHBORS = 4
 HAAR_MIN_SIZE      = (30, 30)
+FACE_WIDTH  = 92
+FACE_HEIGHT = 112
 
 def doCrop(image, x, y, w, h):
 	"""Crop box defined by x, y (upper left corner) and w, h (width and height)
@@ -42,7 +45,7 @@ def resize(image):
         
 if __name__ == '__main__':
     count = 0
-    filePath = []
+    filePaths = list()
     with picamera.PiCamera() as camera:
             camera.resolution = (CAMERA_WIDTH, CAMERA_HEIGHT)
             
@@ -74,12 +77,11 @@ if __name__ == '__main__':
                 for (x,y,w,h) in faces:
                     cv2.rectangle(image, (x,y), (x+w, y+h), (255,0,0),2)
                     crop = resize(doCrop(gray, x, y, w, h))
-                    imagesFolderPath = './data/mg/'
-                    cv2.imwrite(imagesFolderPath.'%s.pgm' % str(count), crop)
-                    file = (imagesFolderPath.'%s.pgm;0' % str(count))
-                    filePath.append(file)
+                    filePathForFile = ('./data/mg/%s.pgm' % str(count))
+                    cv2.imwrite(filePathForFile, crop)
+                    filePaths.append(filePathForFile)
                     
-                    print filePath
+                    print filePaths
                     count += 1
                               
                 outfile = open('mg.csv', 'w')    
@@ -88,7 +90,8 @@ if __name__ == '__main__':
 
                 if key == ord('q'):
                     writer = csv.writer(outfile)
-                    writer.writerow(filePath)    
+                    for files in filePaths:
+                        writer.writerow([files,])    
                     outfile.close() 
                     break
 
