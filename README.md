@@ -16,7 +16,7 @@ For generate.py
    Pages 97-99 which can be found here : https://books.google.com/books?id=iNlOCwAAQBAJ&lpg=PA100&ots=iS-Ed6Wpi8&dq=opencv%20python%20working%20with%20multiple%20eigenfaces&pg=PA99#v=onepage&q&f=false 
    and also Tony DiCola's script.
    
-   This will automatically generate both a .csv with your image paths and the images themselves for your training library. be sure to designate a new folder for each person. I haven't test it with multiple people just yet, so if you have issues, or discover new     things, by all means let me know.
+   This will automatically generate both a .csv with your image paths and the images themselves for your training library. Be sure to designate a new folder for each person. You may also have to make a blank .csv file before it can be used in the script. I haven't tested it with recognition of multiple people just yet, so if you have issues, or discover new things, by all means let me know.
    
 For facerec.py
   I used once again, 
@@ -27,3 +27,7 @@ For facerec.py
    https://github.com/Itseez/opencv/blob/2.4/samples/python2/facerec_demo.py
    
 Hope everyone has luck with this!
+
+To run the script in your command line run python facerec.py </path/to/images/>
+
+P.S. In the images folder, should be the subfolders per individual's training images.
