@@ -22,7 +22,7 @@ For facerec.py
   I used once again, 
    Learning OpenCV 3 Computer Vision with Python
    By Joe Minichino, Joseph Howse
-   Pages 97-99.
+   Pages 100-103.
    and Tony DiCola's script along with this demo
    https://github.com/Itseez/opencv/blob/2.4/samples/python2/facerec_demo.py
    
